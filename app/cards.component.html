@@ -1,4 +1,13 @@
 <h2>Cards Project</h2>
 <div>Cards</div>
+<ul id="cardsMenu">
+  <li>
+    <button (click)="shuffle(cards)">Shuffle</button>
+  </li>
+  <li>
+    <button (click)="sort(cards)">Sort</button>
+  </li>
+</ul>
 <ol>
-<li *ngFor="let card of cards">{{card.face}} of {{card.suit}}</li></ol> 
+  <li *ngFor="let card of cards">{{card.face}} of {{card.suit}}</li>
+</ol>

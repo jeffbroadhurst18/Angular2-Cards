@@ -10,5 +10,5 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent  { 
-  title = 'Tour of Heroes';
+  title = 'Stupid, Stupid, Stupid';
 }

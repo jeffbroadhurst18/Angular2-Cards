@@ -14,13 +14,22 @@ export class CardsComponent implements OnInit {
 
     }
     cards: Card[];
+    shuffledList: Card[];
 
     ngOnInit(): void {
-      this.cards =  this.generateCards();
+        this.cards = this.generateCards();
     }
 
     generateCards(): Card[] {
-        var newCards = this.CardService.generateCards(); 
+        var newCards = this.CardService.generateCards();
         return newCards;
+    }
+
+    shuffle(cardList: Card[]): void {
+        this.cards = this.CardService.shuffle(cardList);
+    }
+
+    sort(cardList: Card[]): void {
+        this.cards = this.CardService.sort(cardList);
     }
 }

@@ -25,6 +25,33 @@ export class CardService {
         }
         return this.cardList;
     };
+
+    shuffle(cardList: Card[]): Card[] {
+        for (var x = 0; x < 1000; x++) {
+                var temp = cardList[0];
+                var swappoint = Math.floor((Math.random() * 51) + 1);
+
+                for (var y = 1; y < swappoint + 1; y++) {
+                    cardList[y - 1] = cardList[y];
+                }
+                cardList[swappoint] = temp;
+            }
+                return cardList;
+    }
+
+    sort(cardList: Card[]) : Card[] {
+       return cardList.sort(compare);
+    }
 }
 
-
+function compare(a:Card, b:Card) {
+  if (a.suit < b.suit)
+    return -1;
+  if (a.suit > b.suit)
+    return 1;
+  if (a.suit == b.suit && a.cardValue < b.cardValue)
+   return -1;
+  if (a.suit == b.suit && a.cardValue > b.cardValue)
+  return 1;
+  return 0;
+}
